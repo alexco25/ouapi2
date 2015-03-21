@@ -19,5 +19,13 @@ class Superadmin
 		post(new_site)
 	end
 	#-------------------------------------
+
+	#--- test_connection------------------
+	def test_connection(params)
+		test = site[:test_connection]
+		test[:params].merge!(params)
+		get(test)
+	end
+	#-------------------------------------
 end
 end

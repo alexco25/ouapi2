@@ -10,10 +10,17 @@ class Superadmin
 		create_account(accounts)
 
 		site[:account] = accounts[:name]
-		response = create_site(site)
+		test = test_connection(site)
+		if test.code == "200"
+			puts "Site Credenitals passed connection test"
+			response = create_site(site)
 
-		user[:account] = accounts[:name]
-		create_user(user)
+			user[:account] = accounts[:name]
+			create_user(user)
+		else
+			puts "Site credentials are invalid, Run away, Run away!!!"
+			abort
+		end
 	end
 	#----------------------------------
 

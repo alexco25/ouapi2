@@ -58,5 +58,15 @@
 			"show_pass":false
 		},
 		"type":"post"
+	},
+	"test_connection":{
+		"path":"/sites/test_connection",
+		"params":{
+			"address":"required",
+			"username":"required",
+			"password":"required",
+			"account":"required"
+		},
+		"type":"get"
 	}
 }
